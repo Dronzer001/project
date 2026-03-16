@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AWS Fullstack Demo</title>
+</head>
+
+<body>
+
+<h1>Fullstack Demo</h1>
+<button onclick="getData()">Fetch Backend Data</button>
+
+<p id="output"></p>
+
+<script>
+async function getData() {
+  const res = await fetch("/api/message");
+  const data = await res.json();
+
+  document.getElementById("output").innerText =
+    data.message + " | " + data.time;
+}
+</script>
+
+</body>
+</html>
