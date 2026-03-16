@@ -1,25 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>AWS Fullstack Demo</title>
-</head>
+<h2>Register</h2>
 
-<body>
+<input id="username" placeholder="Username">
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
 
-<h1>Fullstack Demo</h1>
-<button onclick="getData()">Fetch Backend Data</button>
-
-<p id="output"></p>
+<button onclick="register()">Register</button>
 
 <script>
-async function getData() {
-  const res = await fetch("/api/message");
-  const data = await res.json();
+async function register(){
 
-  document.getElementById("output").innerText =
-    data.message + " | " + data.time;
+const username = document.getElementById("username").value
+const email = document.getElementById("email").value
+const password = document.getElementById("password").value
+
+await fetch("/register",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({username,email,password})
+})
+
+alert("User Registered")
+
 }
 </script>
-
-</body>
-</html>
