@@ -9,7 +9,7 @@ app.use(cors());
 
 // Serve static files (index.html)
 app.use(express.static(__dirname));
-
+app.use(express.static("public"));
 const PORT = 3000;
 
 /* DATABASE CONNECTION */
