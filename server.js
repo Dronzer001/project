@@ -9,10 +9,10 @@ app.use(cors());
 
 const PORT = 3000;
 
-/* DATABASE CONNECTION */
+/* DATABASE CONNECTION (MongoDB Atlas) */
 
-mongoose.connect("mongodb://127.0.0.1:27017/backendDemo")
-.then(() => console.log("MongoDB Connected"))
+mongoose.connect("mongodb+srv://ms3619696_db_user:demo1234@cluster0.ryhcvc0.mongodb.net/backendDemo?retryWrites=true&w=majority")
+.then(() => console.log("MongoDB Atlas Connected"))
 .catch(err => console.log(err));
 
 /* USER MODEL */
@@ -64,7 +64,7 @@ app.post("/login", async (req, res) => {
             message: "Login successful",
             user
         });
-    }else{
+    } else {
         res.json({
             message: "Invalid credentials"
         });
