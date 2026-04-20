@@ -48,6 +48,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'login-signup'   # must match your App Service name exactly
+          app-name: 'login-signup'   # replace with your exact App Service name
           slot-name: 'Production'
           package: .
