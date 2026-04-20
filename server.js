@@ -67,6 +67,7 @@
 //   console.log(`Server running on port ${PORT}`);
 // });
 ////////
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -96,7 +97,6 @@ const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String
 });
-
 const User = mongoose.model("User", userSchema);
 
 /* ROUTES */
@@ -139,4 +139,3 @@ app.get("/users", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
